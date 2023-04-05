@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <div id="columns" class="row" style="justify-content: center;"></div>
+
+    <script>
+      const columns = [
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/129694",
+    "description": "De la Comisi\u00f3n de Comunicaciones y Transportes, con la que remite su Plan Anual de Trabajo, correspondiente al segundo a\u00f1o de ejercicio de la LXV Legislatura.",
+    "action": "Qued\u00f3 de enterado.",
+    "date": "Martes 11 de octubre de 2022"
+  },
+  {
+    "title": "Comunicaciones de Ciudadanos Legisladores",
+    "link": "https://www.senado.gob.mx/65/gaceta_comision_permanente/documento/128604",
+    "description": "Del Sen. Lucy Meza, Presidente de la Primera Comisi\u00f3n, con la que remite su Informe de Actividades, correspondiente al Segundo Receso del Primera A\u00f1o de la LXV Legislatura.",
+    "action": "PARA PRESENTAR EL INFORME INTERVINO LA SEN. LUCY MEZA A NOMBRE DE LA PRIMERA COMISI\u00d3N.\r\nQUED\u00d3 DE ENTERADO.",
+    "date": "Mi\u00e9rcoles 24 de agosto de 2022"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/121028",
+    "description": "De la Sen. Lucy Meza Guzm\u00e1n, del Grupo Parlamentario Morena, con la que remite su Informe de Actividades Legislativas, correspondiente al Tercer A\u00f1o de ejercicio de la LXIV Legislatura.",
+    "action": "Qued\u00f3 de enterado.",
+    "date": "Martes 05 de octubre de 2021"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/120253",
+    "description": "Oficios con los que remiten los informes correspondientes a la LXIV Legislatura de las siguientes comisiones:\r\nAsuntos Ind\u00edgenas,\r\nComunicaciones y Transportes,\r\nGobernaci\u00f3n,\r\nJusticia, y\r\nRelaciones Exteriores Am\u00e9rica del Norte.",
+    "action": "Qued\u00f3 de enterado y se public\u00f3 en la Gaceta y se remiti\u00f3 al Archivo Hist\u00f3rico y Memoria Legislativa.",
+    "date": "Martes 07 de septiembre de 2021"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/113557",
+    "description": "De la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario Morena, con la que remite su Informe de Actividades Legislativas, correspondiente al Segundo A\u00f1o de Ejercicio de la LXIV Legislatura.",
+    "action": "Qued\u00f3 de enterado y se public\u00f3 en la gaceta.",
+    "date": "Jueves 29 de octubre de 2020"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/112920",
+    "description": "De la Comisi\u00f3n de Juventud y Deporte, con la que remite:\r\n-Informe de Actividades, correspondiente al Segundo A\u00f1o de Ejercicio de la LXIV Legislatura y\r\n-Programa Anual de Trabajo, correspondiente al Tercer A\u00f1o de Ejercicio de la LXIV Legislatura.",
+    "action": "Qued\u00f3 de enterado y se public\u00f3 en la gaceta.",
+    "date": "Martes 06 de octubre de 2020"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/102737",
+    "description": "La Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario Morena, con fundamento en lo dispuesto en el art\u00edculo 298 del Reglamento del Senado, informa que no ha tenido actividad con integrantes del Padr\u00f3n de Cabilderos.",
+    "action": "QUED\u00f3 DE ENTERADO.",
+    "date": "Martes 03 de diciembre de 2019"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/99271",
+    "description": "La Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario Morena, remite el informe de su participaci\u00f3n en calidad de Secretaria General Alterna del Parlamento Latinoamericano y Caribe\u00f1o, en la Reuni\u00f3n de la Mesa Directiva y Junta Directiva del PARLATINO, celebrada los d\u00edas 5 y 6 de septiembre, en la ciudad de Panam\u00e1, Panam\u00e1.",
+    "action": "QUED\u00f3 DE ENTERADO Y SE PUBLIC\u00f3 EN LA GACETA.",
+    "date": "Jueves 12 de septiembre de 2019"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/98776",
+    "description": "Una, de la Sen. Luc\u00eda Meza Guzm\u00e1n, del Grupo Parlamentario Morena, con la que remite su Informe de Actividades legislativas, correspondiente al Primer A\u00f1o de Ejercicio de la LXIV Legislatura.",
+    "action": "QUED\u00f3 DE ENTERADO Y SE PUBLICAR\u00e1 EN LA GACETA.",
+    "date": "Martes 03 de septiembre de 2019"
+  },
+  {
+    "title": "Comunicaciones de Ciudadanos Legisladores",
+    "link": "https://www.senado.gob.mx/65/gaceta_comision_permanente/documento/97001",
+    "description": "Una, de la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, con la que remite informe de su participaci\u00f3n como Secretaria de Relaciones Interparlamentarias en la XXV Asamblea Ordinaria del Parlamento Latinoamericano y Caribe\u00f1o, celebrada del 11 al 15 de junio en la ciudad de Panam\u00e1, Panam\u00e1.",
+    "action": "QUED\u00f3 DE ENTERADO Y SE PUBLIC\u00f3 EN LA GACETA.",
+    "date": "Mi\u00e9rcoles 03 de julio de 2019"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/85474",
+    "description": "Una, de la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, por la que informa su participaci\u00f3n en la reuni\u00f3n de la Comisi\u00f3n Interparlamentaria Especial de la Mujer del Foro Parlamentario de Presidentas y Presidentes de Poderes Legislativos de Centroam\u00e9rica y la Cuenca del Caribe, que se llev\u00f3 a cabo el 26 de octubre del a\u00f1o en curso, en San Jos\u00e9, Costa Rica; y remite la Resoluci\u00f3n emitida en dicho evento.",
+    "action": "QUED\u00f3 DE ENTERADO.",
+    "date": "Martes 06 de noviembre de 2018"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/84111",
+    "description": "Una, de la Comisi\u00f3n de Juventud y Deporte, por la que informa que su instalaci\u00f3n se llev\u00f3 a cabo el d\u00eda hoy 4 de octubre del a\u00f1o en curso.",
+    "action": "QUED\u00f3 DE ENTERADO.",
+    "date": "Jueves 04 de octubre de 2018"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/99271",
+    "description": "La Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario Morena, remite el informe de su participaci\u00f3n en calidad de Secretaria General Alterna del Parlamento Latinoamericano y Caribe\u00f1o, en la Reuni\u00f3n de la Mesa Directiva y Junta Directiva del PARLATINO, celebrada los d\u00edas 5 y 6 de septiembre, en la ciudad de Panam\u00e1, Panam\u00e1.",
+    "action": "QUED\u00f3 DE ENTERADO Y SE PUBLIC\u00f3 EN LA GACETA.",
+    "date": "Jueves 12 de septiembre de 2019"
+  },
+  {
+    "title": "Comunicaciones de Senadoras y Senadores",
+    "link": "https://www.senado.gob.mx/65/gaceta_del_senado/documento/85474",
+    "description": "Una, de la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, por la que informa su participaci\u00f3n en la reuni\u00f3n de la Comisi\u00f3n Interparlamentaria Especial de la Mujer del Foro Parlamentario de Presidentas y Presidentes de Poderes Legislativos de Centroam\u00e9rica y la Cuenca del Caribe, que se llev\u00f3 a cabo el 26 de octubre del a\u00f1o en curso, en San Jos\u00e9, Costa Rica; y remite la Resoluci\u00f3n emitida en dicho evento.",
+    "action": "QUED\u00f3 DE ENTERADO.",
+    "date": "Martes 06 de noviembre de 2018"
+  }
+]
+      let cards = ""
+
+      const handleClick = (link) => window.open(link, '_blank')
+
+      columns.forEach((column) => {
+
+        const {date, action, description, link, title} = column
+
+        cards += `
+        <div class="card m-2 col-md-4 col-12" style="display: flex; justify-content: center">
+          <div class="row no-gutters">
+            <div>
+              <div class="card-body">
+                <h5 class="card-title" style="color: black">${title}</h5>
+                <p class="card-text">${date}</p>
+                <p class="card-text">${description}</p>
+                <p class="card-text">${action}</p>
+                <button class="btn btn-danger" type="button" onclick="handleClick('${link}')">
+                  Leer mas...
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      })
+
+      $("#columns").append(cards)
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <div id="columns"></div>
+
+    <script>
+      const columns = [
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor.\nProyecto de decreto por el que se reforman, adicionan y derogan diversas   disposiciones del C\u00f3digo Penal Federal, del C\u00f3digo Nacional de   Procedimiento Penales, de la Ley General del Sistema Nacional de   Seguridad P\u00fablica, de la Ley General de V\u00edctimas y de la Ley General de   Acceso de las Mujeres a una Vida Libre de Violencia.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/15032331.jpg",
+          "date": "Mi\u00e9rcoles 15 de marzo de 2023",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/32397"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Proyecto de decreto por el que se expide la Ley de Protecci\u00f3n del Espacio A\u00e9reo Mexicano.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/22022372.jpg",
+          "date": "Mi\u00e9rcoles 22 de febrero de 2023",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/32144"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para referirse a la intervenci\u00f3n de la Sen. Mar\u00eda Lilly del  Carmen T\u00e9llez Garc\u00eda.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/22022357.jpg",
+          "date": "Mi\u00e9rcoles 22 de febrero de 2023",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/32127"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor.\nProyecto de decreto por el que se reforman, adicionan y derogan diversas   disposiciones de la Ley General de Instituciones y Procedimientos   Electorales, de la Ley General de Partidos Pol\u00edticos, de la Ley Org\u00e1nica   del Poder Judicial de la Federaci\u00f3n y se expide la Ley General de los   Medios de Impugnaci\u00f3n en Materia Electoral, para los efectos de la   fracci\u00f3n e) del art\u00edculo 72 de la Constituci\u00f3n Pol\u00edtica de los Estados   Unidos Mexicanos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/22022347.jpg",
+          "date": "Mi\u00e9rcoles 22 de febrero de 2023",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/32117"
+        },
+        {
+          "title": "Presentar Reservas",
+          "description": "Propuesta de modificaci\u00f3n al art\u00edculo 3 de la Ley General de  Instituciones y Procedimientos Electorales.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/141222111.jpg",
+          "date": "Mi\u00e9rcoles 14 de diciembre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/31652"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para solicitar al Congreso a comparecer al titular de la Fiscal\u00eda de Morelos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/file_5687_intervenciones.png",
+          "date": "Martes 08 de noviembre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/31115"
+        },
+        {
+          "title": "Presentar Reservas",
+          "description": "Propuesta de modificaci\u00f3n de un Segundo Transitorio y  propuesta de adici\u00f3n de un art\u00edculo 239 Bis.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/25102270.jpg",
+          "date": "Martes 25 de octubre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30977"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor.\r\n  Proyecto de decreto por el que se expide la Ley de Ingresos  de la Federaci\u00f3n del Ejercicio Fiscal 2023.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/25102281.jpg",
+          "date": "Martes 25 de octubre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30988"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor, Segunda ronda.\r\n  Proyecto de decreto por el que se reforma el Art\u00edculo Quinto  Transitorio del \u201cDecreto por el que se reforman, adicionan y derogan diversas  disposiciones de la Constituci\u00f3n Pol\u00edtica de los Estados Unidos Mexicanos en  Materia de Guardia Nacional\u201d, publicado en el Diario Oficial de la Federaci\u00f3n  el 26 de marzo de 2019.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/4102261.jpg",
+          "date": "Martes 04 de octubre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30683"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para referirse a la intervenci\u00f3n de la Sen. Mar\u00eda Lilly del  Carmen T\u00e9llez.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/4102232.jpg",
+          "date": "Martes 04 de octubre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30652"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor.\r\n  Proyecto de decreto para inscribir con letras doradas en el  Muro de Honor del Senado de la Rep\u00fablica, la leyenda: \u201cSitio de Cuautla, 72  d\u00edas de lucha\u201d.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/4102216.jpg",
+          "date": "Martes 04 de octubre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30629"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Con proyecto de decreto que reforma, adiciona y deroga diversas disposiciones de la Ley Org\u00e1nica de la Administraci\u00f3n P\u00fablica Federal, de la Ley de la Guardia Nacional, de la Ley Org\u00e1nica del Ej\u00e9rcito y Fuerza A\u00e9rea Mexicanos, y de la Ley de Ascensos y Recompensas del Ej\u00e9rcito y Fuerza A\u00e9rea Mexicanos (en materia de Guardia Nacional y Seguridad P\u00fablica).",
+          "img": "None",
+          "date": "Jueves 08 de septiembre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30286"
+        },
+        {
+          "title": "Alusiones Personales",
+          "description": "refiere que la Sen. Mar\u00eda Lilly del Carmen T\u00e9llez Garc\u00eda (PAN) es una ingrata y usurpadora, por lo que la conmina a renunciar a su encargo legislativo por que lleg\u00f3 al Senado de la Rep\u00fablica v\u00eda las siglas de Morena.",
+          "img": "None",
+          "date": "Jueves 08 de septiembre de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30289"
+        },
+        {
+          "title": "Presentaci\u00f3n de Informe",
+          "description": "Informe de actividades e la Primera Comisi\u00f3n.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/2431.png",
+          "date": "Mi\u00e9rcoles 24 de agosto de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/30114"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Por el que exhorta al gobierno de Nuevo Le\u00f3n, as\u00ed como a la presidencia municipal de Monterrey para que se eval\u00fae la viabilidad de la construcci\u00f3n de un centro comunitario en el municipio de Monterrey, Nuevo Le\u00f3n.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/1020.png",
+          "date": "Mi\u00e9rcoles 10 de agosto de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/29918"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Solicita se informe la raz\u00f3n de porque se ha retirado un dictamen.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/1004.png",
+          "date": "Mi\u00e9rcoles 10 de agosto de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/29897"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Por el que se ratifica el nombramiento de Mauricio M\u00e1rquez Corona como miembro de la Junta de Gobierno del Instituto Nacional de Estad\u00edstica y Geograf\u00eda.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/0303.png",
+          "date": "Mi\u00e9rcoles 03 de agosto de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/29754"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Punto de acuerdo de la Primera Comisi\u00f3n de Trabajo de la Comisi\u00f3n Permanente.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/2944.png",
+          "date": "Mi\u00e9rcoles 29 de junio de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/29381"
+        },
+        {
+          "title": "Agenda Pol\u00edtica",
+          "description": "Referente a los Procesos Electorales de 2022 y la Cumbre de las Am\u00e9ricas.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/0815.png",
+          "date": "Mi\u00e9rcoles 08 de junio de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/29407"
+        },
+        {
+          "title": "Agenda Pol\u00edtica",
+          "description": "Para referirse a los procesos electorales 2022.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/1802i.jpg",
+          "date": "Mi\u00e9rcoles 18 de mayo de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/29148"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n.\nProyecto de decreto por el que se reforman y adicionan diversas disposiciones de la Ley Minera.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/1940.jpg",
+          "date": "Martes 19 de abril de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/28852"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Para referirse a favor del dictamen con proyecto de decreto que adiciona diversas disposiciones de la Ley de Disciplina Financiera de las Entidades Federativas y los Municipios. ",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/538.png",
+          "date": "Martes 05 de abril de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/28686"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Referente a la solicitud de\u00a0 licencia de la Sen. Freyda Marybel Villegas  Canch\u00e9 por tiempo indefinido.",
+          "img": "None",
+          "date": "Mi\u00e9rcoles 02 de marzo de 2022",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/28294"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Proyecto de decreto por el que se reforma el primer p\u00e1rrafo del art\u00edculo 533 de la Ley de V\u00edas Generales de Comunicaci\u00f3n.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/57050.jpg",
+          "date": "Martes 14 de diciembre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/28100"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor.\nDesignaci\u00f3n de la C. Victoria Rodr\u00edguez Ceja, como integrante de la Junta de Gobierno del Banco de M\u00e9xico.",
+          "img": "None",
+          "date": "Jueves 02 de diciembre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27914"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n.\nProyecto de decreto por el que se reforma la fracci\u00f3n XIII del art\u00edculo 4 de la Ley del Instituto Mexicano de la Juventud.",
+          "img": "None",
+          "date": "Martes 30 de noviembre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27851"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Respecto a la solicitud de emitir la controversia  constitucional ante la Suprema Corte de Justicia de la Naci\u00f3n sobre el decreto  emitido por el Ejecutivo Federal.",
+          "img": "None",
+          "date": "Jueves 25 de noviembre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27817"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Puntos  de acuerdo sobre los requisitos de elegibilidad de las personas integrantes de  la terna presentada por el titular del Poder Ejecutivo Federal, para cubrir la  vacante generada por la conclusi\u00f3n del cargo del Ministro Jos\u00e9 Fernando Franco Gonz\u00e1lez Salas.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/56869.jpg",
+          "date": "Martes 23 de noviembre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27718"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n a favor.\nProyecto de decreto por el que se expide la Ley de Ingresos de la Federaci\u00f3n para el Ejercicio Fiscal de 2022.",
+          "img": "None",
+          "date": "Martes 26 de octubre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27407"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para invitar a las reuniones con los funcionarios de la  Secretar\u00eda de Hacienda y Cr\u00e9dito P\u00fablico, quienes que se presentar\u00e1n el 22 de  octubre en el Senado.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/56389.jpg",
+          "date": "Jueves 21 de octubre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27278"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n.\nProyecto de decreto por el que el Senado de la Rep\u00fablica instituye la Medalla de Honor Armada de M\u00e9xico.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/56250.jpg",
+          "date": "Jueves 14 de octubre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27118"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para referirse a diversas situaciones en materia de  inseguridad en Morelos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/56267.jpg",
+          "date": "Martes 05 de octubre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27137"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Intervenci\u00f3n.\nProyecto de decreto por el que se reforman los art\u00edculos 57 y 163 y se adiciona el art\u00edculo 165 Bis de la Ley General de Salud.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/56203.jpg",
+          "date": "Martes 21 de septiembre de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/27006"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Propuesta de modificaci\u00f3n al art\u00edculo 112.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/51085.jpg",
+          "date": "Jueves 15 de abril de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/25819"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Proyecto de decreto por el que se reforman y adicionan diversas disposiciones de la Ley Federal de Telecomunicaciones y Radiodifusi\u00f3n.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/51026.jpg",
+          "date": "Martes 13 de abril de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/25761"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para hacer del conocimiento del Pleno todo lo relacionado con los incendios forestales suscitados en Morelos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/51024.jpg",
+          "date": "Martes 13 de abril de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/25759"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Solicitud de licencia de la Sen. Ma. Leonor Noyola Cervantes  para separarse de sus funciones legislativas por tiempo indefinido.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/50615.jpg",
+          "date": "Mi\u00e9rcoles 10 de marzo de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/25357"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Intervenci\u00f3n.\nSolicitud del Sen. Rub\u00e9n Rocha Moya  para separarse de sus funciones legislativas por tiempo indefinido ",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/50234.jpg",
+          "date": "Martes 02 de marzo de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/25175"
+        },
+        {
+          "title": "Ceremonia Luctuosa",
+          "description": "Intervenci\u00f3n.\nPor motivo del fallecimiento del Senador Radam\u00e9s  Salazar Solorio y solicit\u00f3 un minuto de silencio en su memoria.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/50360.jpg",
+          "date": "Martes 23 de febrero de 2021",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/25064"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Proyecto de decreto por el que se aprueba el Informe que presenta el Ejecutivo Federal sobre las actividades desarrolladas por la Guardia Nacional durante el a\u00f1o inmediato anterior, de conformidad con lo establecido en el art\u00edculo 76, fracci\u00f3n IV de la Constituci\u00f3n Pol\u00edtica de los Estados Unidos Mexicanos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/43443.jpg",
+          "date": "Mi\u00e9rcoles 04 de noviembre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/24205"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Discusi\u00f3n.\nPropuesta de modificaci\u00f3n al art\u00edculo 1o. y adici\u00f3n de un  art\u00edculo d\u00e9cimo quinto transitorio.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/43400.jpg",
+          "date": "Jueves 29 de octubre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/24159"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Discusi\u00f3n.\nPropuesta de modificaci\u00f3n al art\u00edculo 113-A de la Ley del  Impuesto Sobre la Renta.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/43363.jpg",
+          "date": "Jueves 29 de octubre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/24124"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Tres dict\u00e1menes de las Comisiones Unidas de Hacienda y Cr\u00e9dito P\u00fablico y de Estudios Legislativos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/43322.jpg",
+          "date": "Jueves 29 de octubre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/24064"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Punto de acuerdo por el que se determina improcedente la petici\u00f3n de consulta popular en materia de otorgamiento de apoyo econ\u00f3mico, presentada por legisladoras y legisladores.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/43234.jpg",
+          "date": "Mi\u00e9rcoles 07 de octubre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/23899"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Para denunciar la protecci\u00f3n por el delito de violaci\u00f3n, supuestamente ejercido por un diputado local del PES en Morelos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/43096.jpg",
+          "date": "Martes 29 de septiembre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/23717"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Proyecto de decreto que reforma la fracci\u00f3n V del art\u00edculo 102 de la Ley Nacional del Sistema Integral de Justicia Penal para Adolescentes.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/42905.jpg",
+          "date": "Martes 22 de septiembre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/23573"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Referente a la solicitud de licencia del Senador F\u00e9lix Salgado Macedonio, para separarse de sus funciones legislativas, a partir del 16 de septiembre en curso.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/42842.jpg",
+          "date": "Lunes 14 de septiembre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/23510"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Referente a un acto de violencia en Cuernavaca, Morelos, donde fallecieron ocho j\u00f3venes y otras personas m\u00e1s quedaron heridas.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/42707.jpg",
+          "date": "Mi\u00e9rcoles 02 de septiembre de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/23366"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Dictamen por el que autoriza al Ejecutivo Federal permitir la salida de elementos del Ej\u00e9rcito y Fuerza A\u00e9rea Mexicanos, para participar en el Festival Internacional de M\u00fasica Militar \"Torre Spasskaya\" 2020, en Mosc\u00fa, Rusia, que se llevar\u00e1 a cabo de 28 de agosto al 6 de septiembre del a\u00f1o en curso. ",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/42439.jpg",
+          "date": "Mi\u00e9rcoles 29 de julio de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/23078"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": "Proyecto de decreto por el que se reforma el art\u00edculo 4\u00ba de la Ley del Instituto Mexicano de la Juventud, en materia de promoci\u00f3n de cultura de paz y no violencia.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/41255.jpg",
+          "date": "Martes 11 de febrero de 2020",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/21886"
+        },
+        {
+          "title": "Discusi\u00f3n de Dictamen",
+          "description": "Dictamen con proyecto de decreto por el que se reforman los art\u00edculos 4 y 73 de la Constituci\u00f3n Pol\u00edtica de los Estados Unidos Mexicanos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40637.jpg",
+          "date": "Martes 26 de noviembre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/21290"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "D\u00eda Internacional de la Eliminaci\u00f3n de la Violencia contra la Mujer.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40619.jpg",
+          "date": "Martes 26 de noviembre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/21273"
+        },
+        {
+          "title": "Discusi\u00f3n de Proposici\u00f3n",
+          "description": "Acuerdos de la Junta de Coordinaci\u00f3n Pol\u00edtica\nNombramiento de las Consejeras o Consejeros de la Judicatura Federal.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40486.jpg",
+          "date": "Mi\u00e9rcoles 20 de noviembre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/21140"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Dict\u00e1menes a Disucsi\u00f3n y Votaci\u00f3n\nDictamen de las Comisiones Unidas de Derechos Humanos y de Justicia con punto de acuerdo por el que se propone la terna de candidaturas a ocupar la titularidad de la Comisi\u00f3n Nacional de los Derechos Humanos para el per\u00edodo 2019-2024.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/238.jpg",
+          "date": "Mi\u00e9rcoles 30 de octubre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/20827"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe las Comisiones Unidas de Juventud y Deporte; y de Estudios Legislativos, el que contiene Minuta con proyecto de decreto por el que se reforma la fracci\u00f3n IV del art\u00edculo 2 de la Ley General de Cultura F\u00edsica y Deporte.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40269.jpg",
+          "date": "Martes 29 de octubre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/20904"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\n De las Comisiones Unidas de Juventud y Deporte; y de Estudios Legislativos, con proyecto de decreto por el que se reforman y adicionan diversas disposiciones de la Ley del Instituto Mexicano de la Juventud.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40264.jpg",
+          "date": "Martes 29 de octubre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/20899"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "Dict\u00e1menes de Primera Lectura\nDe las Comisiones Unidas de Hacienda y Cr\u00e9dito P\u00fablico; y de Estudios Legislativos, Segunda, con proyecto de decreto por el que se reforman, adicionan y derogan diversas disposiciones de la Ley Federal de Derechos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40174.jpg",
+          "date": "Jueves 24 de octubre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/20750"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDictamen de la Comisiones Unidas de Puntos Constitucionales; de Hacienda y Cr\u00e9dito P\u00fablico; y de Estudios Legislativos, Segunda, con proyecto de decreto por el que se reforma el primer p\u00e1rrafo del art\u00edculo 28 de la Constituci\u00f3n Pol\u00edtica de los Estados Unidos Mexicanos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/163.jpg",
+          "date": "Martes 22 de octubre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/20688"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Representaci\u00f3n de las y los atletas mexicanos que participaron en los pasados XVII Juegos Panamericanos y VI Juegos Parapanamericanos, celebrados en la Ciudad de Lima, Per\u00fa.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/40045.jpg",
+          "date": "Jueves 10 de octubre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/20419"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "\u00a0\n\r\nDict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\r\n \nDe las Comisiones Unidas de Hacienda y Cr\u00e9dito P\u00fablico; de Justicia; y   de Estudios Legislativos, Primera, el que contiene proyecto de decreto   por el que se reforman, adicionan y derogan diversas disposiciones de la   Ley Federal Contra la Delincuencia Organizada; de la Ley de Seguridad   Nacional; del C\u00f3digo Nacional de Procedimientos Penales; del C\u00f3digo   Fiscal de la Federaci\u00f3n; y del C\u00f3digo Penal Federal.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19848.jpg",
+          "date": "Martes 10 de septiembre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19848"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": "Iniciativas\nDe senadoras y senadores integrantes de la Comisi\u00f3n de Juventud y   Deporte, con proyecto de decreto que reforma y adiciona los art\u00edculos 4 y   73 de la Constituci\u00f3n Pol\u00edtica de los Estados Unidos Mexicanos.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19688.jpg",
+          "date": "Martes 03 de septiembre de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19688"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19398.jpg",
+          "date": "Mi\u00e9rcoles 24 de julio de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19398"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Debate en relaci\u00f3n al Estado de Baja California\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19416.jpg",
+          "date": "Mi\u00e9rcoles 24 de julio de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19416"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "\r\nDict\u00e1menes de Primera Lectura\r\n\nDe las Comisiones Unidas de Hacienda y Cr\u00e9dito P\u00fablico, y de  Estudios Legislativos, Segunda, con proyecto de Decreto por el que se expide la  Ley Federal de Austeridad Republicana, y se adicionan diversas disposiciones de  la Ley General de Responsabilidades Administrativas, y de la Ley Federal de  Presupuesto y Responsabilidad Hacendaria.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19236.jpg",
+          "date": "Lunes 01 de julio de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19236"
+        },
+        {
+          "title": "Presentar Reservas",
+          "description": "\r\nDict\u00e1menes de Primera Lectura\r\n\nDe las Comisiones Unidas de Justicia; y de Estudios Legislativas,   Segunda, con proyecto de decreto por el que se expide la Ley Nacional de   Extinci\u00f3n de Dominio, y que reforma y adiciona diversas disposiciones   del C\u00f3digo Nacional de Procedimientos Penales; de la Ley Federal para la   Administraci\u00f3n y Enajenaci\u00f3n de Bienes del Sector P\u00fablico; de la Ley de   Concursos Mercantiles; y de la Ley Org\u00e1nica de la Administraci\u00f3n   P\u00fablica Federal.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19202.jpg",
+          "date": "Lunes 01 de julio de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19202"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "\u00a0\n Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n \nUno,  de la Primera Comisi\u00f3n, con punto de acuerdo: \nEl que exhorta a los  titulares de la Administraci\u00f3n P\u00fablica   Federal, al Poder Ejecutivo de las 32  entidades federativas; a los   Congresos estatales; al INAPAM; al INEGI; al  Sistema Nacional DIF y   Sistemas DIF estatales; instancias de procuraci\u00f3n de  justicia;   secretariado ejecutivo del Sistema Nacional de Seguridad P\u00fablica; y    autoridades de impartici\u00f3n de justicia, para que, en el \u00e1mbito de sus    competencias, consideren las propuestas contenidas en el informe   especial sobre  la situaci\u00f3n de los derechos humanos de las personas   mayores en M\u00e9xico,  elaborado por la Comisi\u00f3n Nacional de los Derechos   Humanos.\n\u00a0\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19158.jpg",
+          "date": "Mi\u00e9rcoles 26 de junio de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19158"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/19008.jpg",
+          "date": "Martes 18 de junio de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/19008"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "",
+          "img": "None",
+          "date": "Mi\u00e9rcoles 08 de mayo de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18743"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "",
+          "img": "None",
+          "date": "Martes 30 de abril de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18688"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "",
+          "img": "None",
+          "date": "Martes 30 de abril de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18623"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe la Comisi\u00f3n de Seguridad P\u00fablica, el que contiene proyecto de decreto   que aprueba la Estrategia Nacional de Seguridad P\u00fablica del gobierno de   la Rep\u00fablica.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/18501.jpg",
+          "date": "Jueves 25 de abril de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18501"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe las Comisiones Unidas de Trabajo y Previsi\u00f3n Social, de Para la   Igualdad de G\u00e9nero y de Estudios Legislativos, Primera, el que contiene   proyecto de decreto por el que se reforman, adicionan y derogan diversas   disposiciones de la Ley Federal del Trabajo y de la Ley del Seguro   Social, en materia de las personas TRABAJADORAS del HOGAR.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/18437.jpg",
+          "date": "Martes 23 de abril de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18437"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/18039.jpg",
+          "date": "Mi\u00e9rcoles 03 de abril de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18039"
+        },
+        {
+          "title": "Fundamentar el Dictamen",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe la Comisiones Unidas de Juventud y Deporte; y de Estudios   Legislativos, el que contiene proyecto de decreto que reforma diversas   disposiciones de la Ley del Instituto Mexicano de la Juventud.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/18016.jpg",
+          "date": "Martes 02 de abril de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/18016"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe la Comisi\u00f3n de Justicia, el que contiene punto de acuerdo que concluye que las personas aspirantes que integran las cinco ternas propuestas por la Suprema Corte de Justicia de la Naci\u00f3n para ocupar el cargo de Magistradas o Magistrados de Sala Regional del Tribunal Electoral del Poder Judicial de la Federaci\u00f3n, re\u00fanen los requisitos legales exigidos y por ende son elegibles para el cargo citado.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/17951.jpg",
+          "date": "Jueves 28 de marzo de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/17951"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe la Comisi\u00f3n de Relaciones Exteriores, el que contiene punto de   acuerdo que exhorta al Poder Ejecutivo Federal a remitir la Convenci\u00f3n   Iberoamericana de Derechos de los J\u00f3venes y el Protocolo Adicional   denominado Pacto Iberoamericano de Juventud, a fin de ser aprobados en   esta Soberan\u00eda.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/17662.jpg",
+          "date": "Jueves 14 de marzo de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/17662"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nUno,  de la Comisi\u00f3n de Cultura, el que contiene punto de acuerdo:\nQue exhorta al titular  del Fondo de Cultura Econ\u00f3mica a conducirse   con respeto a los diversos grupos  sociales e instituciones de nuestro   pa\u00eds.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/17653.jpg",
+          "date": "Jueves 14 de marzo de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/17653"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Dict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\nDe la Comisi\u00f3n Para la Igualdad de G\u00e9nero, el que contiene punto de   acuerdo por el que se confiere el Reconocimiento Elvia Carrillo Puerto,   correspondiente al a\u00f1o 2019, a la ciudadana Mar\u00eda Consuelo Mej\u00eda   Pi\u00f1eiro.",
+          "img": "None",
+          "date": "Jueves 07 de marzo de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/17523"
+        },
+        {
+          "title": "Temas Diversos",
+          "description": "Comunicaciones de Senadoras y Senadores\nUna, del Sen. Alejandro Armenta Mier, con la que solicita licencia para separarse de sus funciones legislativas, por tiempo indefinido, a partir del 27 de febrero de 2019.",
+          "img": "None",
+          "date": "Martes 26 de febrero de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/17343"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "Acuerdo de la Junta de Coordinaci\u00f3n Pol\u00edtica \nPor el que se pone a consideraci\u00f3n del pleno el listado de  10 personas candidatas y candidatos al cargo de titular de la Fiscal\u00eda General  de la Rep\u00fablica, para ser enviado al Ejecutivo Federal.\n\u00a0",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/16933.jpg",
+          "date": "Mi\u00e9rcoles 16 de enero de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/16933"
+        },
+        {
+          "title": "Presenta Punto de Acuerdo",
+          "description": "Proposiciones\nPunto de acuerdo por el que se exhorta al estado de Morelos a implementar acciones a fin de esclarecer el asesinato de la regidora electa Mar\u00eda Ascenci\u00f3n Torres Cruz, del municipio de Mazatepec",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/16888.jpg",
+          "date": "Mi\u00e9rcoles 09 de enero de 2019",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/16888"
+        },
+        {
+          "title": "Posicionamiento Gpo. Parlamentario",
+          "description": " \r\nDict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\r\n \nDe la Comisi\u00f3n de Justicia, el que contiene puntos de acuerdo sobre los   requisitos de elegibilidad de las personas que integran la terna para la   elecci\u00f3n de Ministro o Ministra de la Suprema Corte de Justicia de la   Naci\u00f3n.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/16806.jpg",
+          "date": "Jueves 20 de diciembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/16806"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": " \r\nDict\u00e1menes a Discusi\u00f3n y Votaci\u00f3n\r\n \nUno, de la Comisi\u00f3n de Relaciones Exteriores Am\u00e9rica del Norte, el que contiene punto de acuerdo:\n\r\n  Por el que el Senado de la Rep\u00fablica expresa su m\u00e1s en\u00e9rgica condena al   crimen de odio ocurrido el 27 de octubre de 2018 contra la comunidad   jud\u00eda en una sinagoga en Pittsburgh, Estados Unidos, y expresa su   repudio a cualquier acto de violencia, discriminaci\u00f3n, intolerancia o   racismo, por razones de raza o religi\u00f3n.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/16702.jpg",
+          "date": "Martes 18 de diciembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/16702"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": " Iniciativas\nDe la Sen. Luc\u00eda Virgina Meza Guzm\u00e1n, del Grupo Parlamentario del   Partido Morena, con proyecto de decreto por el que se reforman la Ley   General de Acceso de las Mujeres a una Vida Libre de Violencia y la Ley   General de Salud.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/16410.jpg",
+          "date": "Martes 04 de diciembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/16410"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": " Iniciativas\nDe las Senadoras y los Senadores del Grupo Parlamentario del Partido   Acci\u00f3n Nacional, para referirse a la situaci\u00f3n sobre la consulta del   nuevo aeropuerto internacional de la Ciudad de M\u00e9xico.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/15683.jpg",
+          "date": "Martes 06 de noviembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/15683"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": " Agenda Pol\u00edtica\nDe las Senadoras y los Senadores del Grupo Parlamentario del Partido   Acci\u00f3n Nacional, para referirse a la situaci\u00f3n sobre la consulta del   nuevo aeropuerto internacional de la Ciudad de M\u00e9xico.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/15616.jpg",
+          "date": "Martes 30 de octubre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/15616"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": " Iniciativas \nDe la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n y del Sen. Higinio Mart\u00ednez   Miranda, del Grupo Parlamentario Morena, con proyecto de decreto por el   que se adiciona un p\u00e1rrafo cuarto al art\u00edculo 50 de la Ley de Caminos,   Puentes y Autotransporte Federal.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/15536.jpg",
+          "date": "Martes 23 de octubre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/15536"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": " Iniciativas.\nDe la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario del   Partido Morena, con proyecto de decreto que reforma, adiciona y deroga   diversas disposiciones de la Ley Federal del Trabajo y a la Ley del   Seguro Social.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/15214.jpg",
+          "date": "Martes 02 de octubre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/15214"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": "De la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario del Partido Morena con proyecto de decreto que reforma y adiciona diversas disposiciones de la Constituci\u00f3n Pol\u00edtica de los Estados Unidos Mexicanos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/14974.jpg",
+          "date": "Martes 18 de septiembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/14974"
+        },
+        {
+          "title": "Intervenci\u00f3n a favor",
+          "description": "Proposiciones\nDe la Sen. Blanca Estela Pi\u00f1a Gudi\u00f1o, del Grupo Parlamentario del   Partido Morena, con punto de acuerdo que exhorta al Ejecutivo Federal, a   la Secretar\u00eda de Educaci\u00f3n P\u00fablica y al Instituto Nacional para la   Evaluaci\u00f3n de la Educaci\u00f3n a suspender la evaluaci\u00f3n docente programada   del 3 al 25 de noviembre del presente a\u00f1o, as\u00ed como todo proceso de   evaluaci\u00f3n para el ingreso, promoci\u00f3n, reconocimiento y permanencia de   las y los maestros.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/14879.jpg",
+          "date": "Jueves 13 de septiembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/14879"
+        },
+        {
+          "title": "Presenta Punto de Acuerdo",
+          "description": "Proposiciones\nDe la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario del   Partido Morena, con punto de acuerdo que exhorta al titular del Poder   Ejecutivo a que, a trav\u00e9s de la Secretar\u00eda de Educaci\u00f3n P\u00fablica, se   agilicen los tr\u00e1mites para el rescate financiero de la Universidad   Aut\u00f3noma del estado de Morelos.\n\nDe la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario del   Partido Morena, con punto de acuerdo que exhorta al titular del Poder   Ejecutivo a que, a trav\u00e9s de la Secretar\u00eda de Educaci\u00f3n P\u00fablica, se   agilicen los tr\u00e1mites para el rescate financiero de la Universidad   Aut\u00f3noma del estado de Morelos.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/14818.jpg",
+          "date": "Martes 11 de septiembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/14818"
+        },
+        {
+          "title": "Presentaci\u00f3n de Iniciativa",
+          "description": "Iniciativas\nDe la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario del   Partido Morena, con proyecto de decreto por el que se reforman y   adicionan diversas disposiciones de la Ley Agraria.\n\nDe la Sen. Luc\u00eda Virginia Meza Guzm\u00e1n, del Grupo Parlamentario del   Partido Morena, con proyecto de decreto por el que se reforman y   adicionan diversas disposiciones de la Ley Agraria.",
+          "img": "https://www.senado.gob.mx/imagenes/intervenciones_fotos/14815.jpg",
+          "date": "Martes 11 de septiembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/14815"
+        },
+        {
+          "title": "Intervenci\u00f3n",
+          "description": "Una,   del Sen. Manuel Velasco Coello, por la que solicita licencia para   separarse de sus funciones legislativas, por tiempo indefinido, a partir   del 4 de septiembre de 2018.\n ",
+          "img": "None",
+          "date": "Martes 04 de septiembre de 2018",
+          "link": "https://www.senado.gob.mx/65/intervenciones/1035/14751"
+        }
+      ]
+      let cards = ""
+
+      const handleClick = (link) => window.open(link, '_blank')
+
+      columns.forEach((column) => {
+        const {date, description, link, img, title} = column
+
+        cards += `
+        <div class="card m-4" style="max-width: 800px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="display: flex; align-items: center;">
+              <img src="${img !== "None" ? img : "https://www.senado.gob.mx/65/images/senadores/64/1035-meza_lucy-20210921-145241.jpg"}" class="card-img m-2" alt="img">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title" style="color: black">${title}</h5>
+                <p class="card-text">${date}</p>
+                <p class="card-text">${description.replaceAll("\n", "<br><br>")}</p>
+                <button class="btn btn-danger" type="button" onclick="handleClick('${link}')">
+                  Leer mas...
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      })
+
+      $("#columns").append(cards)
+    </script>
+
+  </body>
+</html>

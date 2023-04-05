@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <div id="columns"></div>
+
+    <script>
+      const columns = [
+        {
+          "title": "LA VIDA COMO MOVIMIENTO\u00a0",
+          "description": "La filosof\u00eda hab\u00eda abordado este tema desde la \u00e9poca de los pre-socr\u00e1ticos, sin embargo, siempre enunciaba \u201calgo\u201d que se mov\u00eda,\u2026",
+          "link": "https://lajornadahidalgo.com/la-vida-como-movimiento-2/"
+        },
+        {
+          "title": "JULIO MENCHACA, GOBERNADOR",
+          "description": "El pasado domingo 12 de junio, luego de una sesi\u00f3n del pleno del Instituto Estatal Electoral de Hidalgo, la consejera\u2026",
+          "link": "https://lajornadahidalgo.com/julio-menchaca-gobernador/"
+        },
+        {
+          "title": "SEGUNDO DEBATE\u00a0",
+          "description": "Escribo estas l\u00edneas en un tiempo entre los eventos de campa\u00f1a, es d\u00eda jueves 12 de mayo y me encuentro\u2026",
+          "link": "https://lajornadahidalgo.com/segundo-debate/"
+        },
+        {
+          "title": "PRIMER DEBATE\u00a0",
+          "description": "Escribo estas l\u00edneas a unas cuantas horas de que se lleve a cabo el primer debate entre los cuatro candidatos\u2026",
+          "link": "https://lajornadahidalgo.com/primer-debate/"
+        },
+        {
+          "title": "13 d\u00edas de campa\u00f1as",
+          "description": "En Hidalgo han transcurrido 13 d\u00edas desde que iniciaron las campa\u00f1as pol\u00edticas, pareciera poco tiempo, pero es el 20% de\u2026",
+          "link": "https://lajornadahidalgo.com/13-dias-de-campanas/"
+        },
+        {
+          "title": "\u00a1 ARRANCAN!",
+          "description": "El proceso electoral para renovar el poder ejecutivo en el Estado de Hidalgo sigue su marcha, el tiempo transcurre y\u2026",
+          "link": "https://lajornadahidalgo.com/arrancan/"
+        },
+        {
+          "title": "8 de marzo",
+          "description": "El pasado martes se llev\u00f3 a cabo la conmemoraci\u00f3n del d\u00eda internacional de la mujer, tiempo y espacio que se\u2026",
+          "link": "https://lajornadahidalgo.com/8-de-marzo/"
+        },
+        {
+          "title": "Reforma energ\u00e9tica",
+          "description": "El Gobierno de la Rep\u00fablica est\u00e1 proponiendo al poder Legislativo una reforma que modifique los art\u00edculos 25, 27 y 28\u2026",
+          "link": "https://lajornadahidalgo.com/reforma-energetica/"
+        },
+        {
+          "title": "Encuestitis",
+          "description": "El d\u00eda de ayer, 10 de febrero, terminaron los tiempos legales para las pre- campa\u00f1as. Los tres pre-candidatos y sus\u2026",
+          "link": "https://lajornadahidalgo.com/encuestitis/"
+        },
+        {
+          "title": "Tres pre-candidatos",
+          "description": "Los seres humanos estamos atrapados en el espacio y en el tiempo, existimos en el aqu\u00ed y ahora, sin embargo,\u2026",
+          "link": "https://lajornadahidalgo.com/tres-pre-candidatos/"
+        },
+        {
+          "title": "Victoria y derrota anunciadas",
+          "description": "El partido pol\u00edtico Movimiento de Regeneraci\u00f3n\u00a0Nacional, mejor conocido como MORENA, ha procesado con relativo \u00e9xito el nombramiento de su hoy\u2026",
+          "link": "https://lajornadahidalgo.com/victoria-y-derrota-anunciadas/"
+        },
+        {
+          "title": "Es Julio",
+          "description": "El\u00a0d\u00eda mi\u00e9rcoles\u00a022 del presente mes, el Partido Movimiento de Regeneraci\u00f3n Nacional\u00a0dio\u00a0a conocer a los 6 aspirantes con los que ir\u00e1\u2026",
+          "link": "https://lajornadahidalgo.com/es-julio/"
+        },
+        {
+          "title": "Francisco Xavier",
+          "description": "En la mitolog\u00eda griega tan pr\u00f3diga en narrar tragedias, es famoso el mito de T\u00e1ntalo, hijo de Zeus, hombre privilegiado\u2026",
+          "link": "https://lajornadahidalgo.com/francisco-xavier/"
+        },
+        {
+          "title": "Diciembre y julio",
+          "description": "El tiempo sigue su marcha y hoy el calendario indica que estamos viviendo el 10 de diciembre del a\u00f1o 2021;\u2026",
+          "link": "https://lajornadahidalgo.com/diciembre-y-julio/"
+        },
+        {
+          "title": "Humanismo existencial",
+          "description": "Abordar el concepto de Humanismo, implica partir de la premisa de que no existe solo una versi\u00f3n del mismo, m\u00e1s\u2026",
+          "link": "https://lajornadahidalgo.com/humanismo-existencial/"
+        },
+        {
+          "title": "Incertidumbre y posibilidad",
+          "description": "La filosof\u00eda existencial nos presenta una forma espec\u00edfica acerca de c\u00f3mo concibe la existencia humana, son muchas las propuestas que\u2026",
+          "link": "https://lajornadahidalgo.com/incertidumbre-y-posibilidad/"
+        },
+        {
+          "title": "Gracias Vida-Muerte",
+          "description": "Reci\u00e9n pas\u00f3 el llamado d\u00eda de muertos, espacio socio-cultural donde los mexicanos, envueltos en cientos de tradiciones, celebramos la muerte\u2026",
+          "link": "https://lajornadahidalgo.com/gracias-vida-muerte/"
+        },
+        {
+          "title": "Menchaca, es inevitable",
+          "description": "El pasado mi\u00e9rcoles 27 del presente mes, Julio Menchaca Salazar realiz\u00f3 el tercer informe de sus actividades como Senador de\u2026",
+          "link": "https://lajornadahidalgo.com/menchaca-es-inevitable/"
+        },
+        {
+          "title": "Candidatos posibles",
+          "description": "Poco m\u00e1s de 7 meses nos separan de la fecha en que habremos de elegir gobernador o gobernadora para nuestro\u2026",
+          "link": "https://lajornadahidalgo.com/candidatos-posibles/"
+        },
+        {
+          "title": "Gestionando mis emociones",
+          "description": "La pandemia de COVID ha tenido un\u00a0alto costo en pr\u00e1cticamente todo el mundo, la p\u00e9rdida de millones de vidas\u00a0humanas,\u00a0los estragos\u00a0en\u2026",
+          "link": "https://lajornadahidalgo.com/gestionando-mis-emociones/"
+        },
+        {
+          "title": "Retos del porvenir",
+          "description": "Nuestra existencia transcurre en un presente continuo, atrapados en el aqu\u00ed y ahora, en el este espacio y tiempo concreto;\u2026",
+          "link": "https://lajornadahidalgo.com/retos-del-porvenir/"
+        },
+        {
+          "title": "\u00bfY t\u00fa qu\u00e9 est\u00e1s haciendo?",
+          "description": "En mi pasada entrega reflexionaba sobre la posibilidad de que nuestra creciente agresi\u00f3n al medio ambiente nos llevara a un\u2026",
+          "link": "https://lajornadahidalgo.com/y-tu-que-estas-haciendo/"
+        },
+        {
+          "title": "\u00bfUna tierra sin humanos?",
+          "description": "El t\u00edtulo de este art\u00edculo me parece pertinente: \u00bfpodr\u00e1 nuestra especie, el homo sapiens, sobrevivir en este planeta, al que\u2026",
+          "link": "https://lajornadahidalgo.com/una-tierra-sin-humanos/"
+        },
+        {
+          "title": "Una sola humanidad",
+          "description": "Es\u00a0ampliamente conocida la historia de un di\u00e1logo entre estudiantes\u00a0y la\u00a0prestigiada\u00a0antrop\u00f3loga Margarita Mead, donde se le pregunt\u00f3 cu\u00e1l consideraba ella el\u2026",
+          "link": "https://lajornadahidalgo.com/una-sola-humanidad/"
+        },
+        {
+          "title": "Liderazgo",
+          "description": "Las personas vivimos en comunidad y nuestra existencia surge en relaci\u00f3n con los otros: para ser hijo, necesito tener un\u2026",
+          "link": "https://lajornadahidalgo.com/liderazgo/"
+        },
+        {
+          "title": "Mirarnos en el espejo",
+          "description": "Nuestro M\u00e9xico tiene muchos rostros, algunos nos provocan, entre otros, sentimientos de gozo, placer, admiraci\u00f3n, satisfacci\u00f3n, otros nos conducen al\u2026",
+          "link": "https://lajornadahidalgo.com/mirarnos-en-el-espejo/"
+        },
+        {
+          "title": "\u00bfQu\u00e9 es el aprendizaje emocional?",
+          "description": "\u00a0El Collaborative for Academic, Social and Emotional Learning (CASEL) define el aprendizaje socioemocional (SEL) como aquel que \u00abmejora la capacidad\u2026",
+          "link": "https://lajornadahidalgo.com/que-es-el-aprendizaje-emocional/"
+        },
+        {
+          "title": "De griegos, romanos y la Consulta Popular",
+          "description": "La historia, comprendida como la disciplina que estudia y narra acontecimientos del pasado, nos permite conocer algunos momentos claves de\u2026",
+          "link": "https://lajornadahidalgo.com/de-griegos-romanos-y-la-consulta-popular/"
+        },
+        {
+          "title": "De argumentos y proyectos",
+          "description": "Eric Berne, profesional de la salud mental formado en el psicoan\u00e1lisis, propon\u00eda que las personas durante la infancia desarrollamos un\u2026",
+          "link": "https://lajornadahidalgo.com/de-argumentos-y-proyectos/"
+        },
+        {
+          "title": "Hidalgo 2022",
+          "description": "En el Estado de Hidalgo tendremos elecciones para gobernador dentro de aproximadamente un a\u00f1o; parece mucho tiempo, pero en esta\u2026",
+          "link": "https://lajornadahidalgo.com/hidalgo-2022/"
+        },
+        {
+          "title": "La persona y la comunidad",
+          "description": "Jean Lacroix lanza una propuesta llamada personalismo-comunitario, se\u00f1alando que \u201cel personalismo no puede ser m\u00e1s que una filosof\u00eda de la\u2026",
+          "link": "https://lajornadahidalgo.com/la-persona-y-la-comunidad/"
+        },
+        {
+          "title": "Violencia en los hogares",
+          "description": "La pandemia que seguimos viviendo nos muestra muchas de las sombras que acompa\u00f1an nuestra vida cotidiana; el largo confinamiento, la\u2026",
+          "link": "https://lajornadahidalgo.com/violencia-en-los-hogares/"
+        },
+        {
+          "title": "D\u00eda del Padre",
+          "description": "Comprendo la urticaria que provoca en algunas personas \u201cla celebraci\u00f3n\u201d del d\u00eda del padre. Se puede observar m\u00e1s como una\u2026",
+          "link": "https://lajornadahidalgo.com/dia-del-padre/"
+        },
+        {
+          "title": "6 de JUNIO 2021",
+          "description": "Finalmente lleg\u00f3 la fecha en que se realiz\u00f3 la llamada elecci\u00f3n m\u00e1s grande en la historia democr\u00e1tica de nuestro Pa\u00eds.\u2026",
+          "link": "https://lajornadahidalgo.com/6-de-junio-2021/"
+        },
+        {
+          "title": "Verdades, ficciones y posverdad",
+          "description": "Expertos en los procesos evolutivos del ser humano afirman que nuestra especie invent\u00f3 el lenguaje hace aproximadamente 70,000 a\u00f1os, con\u2026",
+          "link": "https://lajornadahidalgo.com/verdades-ficciones-y-posverdad/"
+        },
+        {
+          "title": "Elecciones 2021",
+          "description": "Al momento de publicar esta columna, estamos a 15 d\u00edas de lo algunos han llamado \u201cla m\u00e1s grande de las\u2026",
+          "link": "https://lajornadahidalgo.com/elecciones-2021-2/"
+        },
+        {
+          "title": "Entre lo \u00edntimo y lo p\u00fablico",
+          "description": "En alguna ocasi\u00f3n escuch\u00e9 decir a \u00c1ngeles Mastretta que todos tenemos una vida p\u00fablica, una vida privada, una vida \u00edntima\u2026",
+          "link": "https://lajornadahidalgo.com/entre-lo-intimo-y-lo-publico/"
+        },
+        {
+          "title": "\u00bfVolver\u00e1 el nihilismo?",
+          "description": "Una de las grandes aportaciones del movimiento rom\u00e1ntico fue su visi\u00f3n acerca del amor: una mirada que nos dice que\u2026",
+          "link": "https://lajornadahidalgo.com/volvera-el-nihilismo/"
+        },
+        {
+          "title": "La vida como movimiento",
+          "description": "Ya los fil\u00f3sofos presocr\u00e1ticos abordaban este tema, sin embargo, siempre enunciaban \u201calgo\u201d que se mov\u00eda, es decir, un ser-en-movimiento. En\u2026",
+          "link": "https://lajornadahidalgo.com/la-vida-como-movimiento/"
+        },
+        {
+          "title": "La riqueza de los feminismos",
+          "description": "Con la aparici\u00f3n del lenguaje, los homos sapiens dimos un gran salto evolutivo, poco a poco fuimos nombrando las cosas\u2026",
+          "link": "https://lajornadahidalgo.com/la-riqueza-de-los-feminismos/"
+        },
+        {
+          "title": "FILOSOF\u00cdA DE LA PERSONA",
+          "description": "La filosof\u00eda de la persona es conocida como Personalismo, m\u00e1s aun, como personalismo-comunitario. Desde sus primeros a\u00f1os de vida, la\u2026",
+          "link": "https://lajornadahidalgo.com/filosofia-de-la-persona/"
+        },
+        {
+          "title": "Entre el humanismo y el posthumanismo",
+          "description": "El humanismo es un movimiento intelectual, filos\u00f3fico y cultural europeo estrechamente ligado al Renacimiento, cuyo origen se sit\u00faa en el\u2026",
+          "link": "https://lajornadahidalgo.com/entre-el-humanismo-y-el-posthumanismo/"
+        },
+        {
+          "title": "LA VIDA VA",
+          "description": "Ernesto S\u00e1bato escrib\u00eda: \u201cEl Ser humano sabe hacer de los obst\u00e1culos nuevos caminos, porque a la vida le basta el\u2026",
+          "link": "https://lajornadahidalgo.com/la-vida-va/"
+        },
+        {
+          "title": "DECIR ADI\u00d3S",
+          "description": "Vida y muerte son caras de la misma moneda, no existe una sin la otra; todo lo que forma eso\u2026",
+          "link": "https://lajornadahidalgo.com/decir-adios/"
+        },
+        {
+          "title": "INTELIGENCIA EMOCIONAL",
+          "description": "Son cuatro las habilidades que conviene conocer y desarrollar para potenciar nuestra inteligencia emocional.",
+          "link": "https://lajornadahidalgo.com/inteligencia-emocional/"
+        },
+        {
+          "title": "DE MAGIA, CIENCIA Y VACUNAS",
+          "description": "El ser humano sufre, tiene miedo, se para ante el abismo de la finitud",
+          "link": "https://lajornadahidalgo.com/de-magia-ciencia-y-vacunas/"
+        },
+        {
+          "title": "CIUDADANOS DEL MUNDO",
+          "description": "Hay un solo mundo y una sola humanidad y que toda vida humana, sin importar el lugar y las condiciones\u2026",
+          "link": "https://lajornadahidalgo.com/ciudadanos-del-mundo/"
+        },
+        {
+          "title": "EL MITO DE S\u00cdSIFO",
+          "description": "El hombre que enfrenta al absurdo es un hombre solo y contempla la realidad como espectador",
+          "link": "https://lajornadahidalgo.com/el-mito-de-sisifo/"
+        },
+        {
+          "title": "DESCUBRIR EL SENTIDO",
+          "description": "La logoterapia nos invita a descubrir las posibilidades de sentido que se encuentran en la vida cotidiana y a dar\u2026",
+          "link": "https://lajornadahidalgo.com/descubrir-el-sentido/"
+        },
+        {
+          "title": "El potencial ignorado",
+          "description": "En occidente, termina el dif\u00edcil 2020 e inicia el 2021. Los seres humanos somos animales simb\u00f3licos y esto nos permite\u2026",
+          "link": "https://lajornadahidalgo.com/el-potencial-ignorado/"
+        },
+        {
+          "title": "Tiempo de morir, tiempo de vivir",
+          "description": "Este a\u00f1o, el 2020 se empe\u00f1\u00f3 en golpear las reservas de certidumbre y confianza de los seres humanos. A la\u2026",
+          "link": "https://lajornadahidalgo.com/tiempo-de-morir-tiempo-de-vivir/"
+        },
+        {
+          "title": "Elecciones 2021",
+          "description": "Est\u00e1 terminando el a\u00f1o 2020 y nosotros, seres humanos tendidos al futuro, ya estamos imaginando cantidad de escenarios para el\u2026",
+          "link": "https://lajornadahidalgo.com/elecciones-2021/"
+        },
+        {
+          "title": "Gu\u00eda \u00e9tica",
+          "description": "El Gobierno Federal ha presentado un documento intitulado \u201cGu\u00eda \u00e9tica para la transformaci\u00f3n de M\u00e9xico\u201d, texto que en 20 postulados\u2026",
+          "link": "https://lajornadahidalgo.com/guia-etica/"
+        },
+        {
+          "title": "El camino y el caminante",
+          "description": "Despojarse Han transcurrido dos a\u00f1os del gobierno que encabeza el presidente Andr\u00e9s Manuel L\u00f3pez Obrador, la tercera parte de su\u2026",
+          "link": "https://lajornadahidalgo.com/el-camino-y-el-caminante-2/"
+        },
+        {
+          "title": "Tiempos de pandemia",
+          "description": "Natividad Castrej\u00f3n La naturaleza, entendida como el conjunto de seres y cosas que forman el universo, es lo que es.\u00a0\u2026",
+          "link": "https://lajornadahidalgo.com/tiempos-de-pandemia/"
+        },
+        {
+          "title": "El existente",
+          "description": "Natividad Castrej\u00f3n Pocos saben que ayer, 19-11-20, se celebr\u00f3 el d\u00eda mundial de la filosof\u00eda. La filosof\u00eda busca estudiar la\u2026",
+          "link": "https://lajornadahidalgo.com/el-existente/"
+        },
+        {
+          "title": "El camino y el caminante",
+          "description": "Natividad Castrej\u00f3n Como humanidad estamos viviendo tiempos particularmente dif\u00edciles, la pandemia provocada por un aparentemente debilucho virus nos est\u00e1 confrontando\u2026",
+          "link": "https://lajornadahidalgo.com/el-camino-y-el-caminante/"
+        }
+      ]
+      let cards = ""
+
+      const handleClick = (link) => window.open(link, '_blank')
+
+      columns.forEach((column) => {
+        const {title, description, link} = column
+
+        cards += `
+        <div class="card m-4" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="display: flex; align-items: center;">
+              <img src="https://static.lajornadahidalgo.com/wp-content/uploads/2022/01/NATIVIDAD-CASTREJON-WEB-390x220.jpg" class="card-img m-2" alt="img">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${description}</p>
+                <button class="btn btn-danger" type="button" onclick="handleClick('${link}')">
+                  Leer mas...
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      })
+
+      $("#columns").append(cards)
+    </script>
+
+  </body>
+</html>
